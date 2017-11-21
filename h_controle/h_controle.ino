@@ -1,8 +1,8 @@
 #define JVCPower     0xC5E8
 #define TVPower      0x4FB4AB5
 
-#define BUTTON_PIN  8
-#define LED_PIN   9
+#define BUTTON_PIN  12
+#define LED_PIN   10
 #define RECV_PIN 2
 
 #define ReciverPowerComandCode 00000001
@@ -58,9 +58,6 @@ int recive() {
 
    if (!value) {
     value = readButton(); 
-   }
-   if (!value) {
-    value = readSerial();
    }
   
   if (value !=0) {

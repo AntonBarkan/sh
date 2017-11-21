@@ -3,7 +3,7 @@ SoftwareSerial mySerial(7, 8); // RX, TX
 
 void setup() {
   // put your setup code here, to run once:
-  pinMode(11, OUTPUT);
+  pinMode(10, OUTPUT);
   mySerial.begin(9600);
   Serial.begin(9600);
 
@@ -21,9 +21,9 @@ void loop() {
     char c =mySerial.read();
     Serial.write(c);
     if (c =='1')   {
-      digitalWrite(11, HIGH);
+      digitalWrite(10 , HIGH);
     }else if(c =='6'){
-      digitalWrite(11, LOW);
+      digitalWrite(10, LOW);
     }
       
   }
