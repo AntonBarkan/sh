@@ -1,16 +1,17 @@
-class rf_command{
-	public:			iarduino_RF433_Receiver	(uint8_t=2);						//	Объявление	экземпляра класса					([№ вывода, к которому подключён приёмник])
-	/**	пользовательские функции **/
-		void		begin					(uint16_t=i433_2KBPS);				//	Инициируем	работу с приёмником					([скорость приёма данных])
-		void		setDataRate				(uint16_t);							//	Указываем	скорость передачи данных			(i433_5KBPS, i433_4KBPS, i433_3KBPS, i433_2KBPS, i433_1KBPS, i433_500BPS, i433_100BPS)
-		void		openReadingPipe			(uint8_t=8);						//	Открываем	трубу								([номер трубы]) если не указывать номер, то откроются все трубы
-		void		closeReadingPipe		(uint8_t=8);						//	Закрываем	трубу								([номер трубы]) если не указывать номер, то закроются все трубы
-		void		startListening			(void);								//	Включаем	приемник, начинаем прослушивание	(без параметров)
-		void		stopListening			(void);								//	Выключаем	приёмник, завершаем прослушивание	(без параметров)
-		bool		available				(void);								//	Узнаём		имеются ли принятые данные			(без параметров)
-		bool		available				(uint8_t*);							//	Узнаём		имеются ли принятые данные			(указатель на переменную в которую будет помещён номер трубы, по которой приняты данные)
-		void		read					(void*, uint8_t);					//	Читаем		полученные данные в массив			(указатель на массив для получения данных, длинна массива)
+class rf_command {
+	public: rf_command(unsigned int, unsigned int);
+		unsigned int getSender();
+		unsigned int  getCommand();
 	private:
-	/**	внутренние переменные **/
-		uint16_t	i433_time_RATE;												//	Скорость	передачи данных						(количество микросекунд в 1 полубите)
+		unsigned int sender;
+		unsigned int  command;
+}
+
+class rf_sender {
+	public:			rf_sender	(unsigned int); 
+		void sendCommand(rf_command);
+		rf_command readCommand();
+
+	private: 
+		unsigned int id;
 };
