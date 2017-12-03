@@ -7,7 +7,7 @@ class rf_command {
 		unsigned int  command;
 }
 
-class rf_sender {
+class rf {
 	public:			rf_sender	(unsigned int); 
 		void sendCommand(rf_command);
 		rf_command readCommand();
