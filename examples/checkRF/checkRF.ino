@@ -8,7 +8,8 @@
 //
 // Подключаем библиотеку:
 #include <iarduino_RF433_Transmitter.h>                   // Подключаем библиотеку для работы с передатчиком FS1000A
-#include <iarduino_RF433_Receiver.h>                      // Подключаем библиотеку для работы с приёмником MX-RM-5V
+#include <iarduino_RF433_Receiver.h>    
+#include <Rf.h>// Подключаем библиотеку для работы с приёмником MX-RM-5V
 
 // Объявляем объекты, переменные и массивы:
 iarduino_RF433_Transmitter radioTX(10);                    // Создаём объект radioTX для работы с библиотекой iarduino_RF433, указывая номер вывода к которому подключён передатчик

@@ -1,4 +1,4 @@
-#define LED_PIN 4
+#define LED_PIN 12
 
 void setup() {
   pinMode(LED_PIN, OUTPUT);
@@ -7,7 +7,7 @@ void setup() {
 void loop() {
   // put your main code here, to run repeatedly:
  digitalWrite(LED_PIN , HIGH);
- delay(600);
+ delay(1000);
  digitalWrite(LED_PIN , LOW);
- delay(100);
+ delay(1000);
 }
